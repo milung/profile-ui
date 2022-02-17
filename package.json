@@ -1,0 +1,24 @@
+{
+  "name": "profile-uic",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "dockerize": "docker build -t milung/ufe-profile-uic ."
+  },
+  "dependencies": {
+    "@stencil/core": "^2.13.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "crypto-js": "^4.1.1",
+    "jest": "^27.5.1",
+    "jest-cli": "^27.5.1",
+    "md5": "^2.3.0",
+    "puppeteer": "^13.3.2"
+  }
+}

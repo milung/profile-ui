@@ -1,0 +1,10 @@
+resources: 
+- deployment.yaml
+- service.yaml
+- webcomponent.yaml
+- ingress.yaml
+
+namespace: default
+
+commonLabels: 
+  app: profile-ui

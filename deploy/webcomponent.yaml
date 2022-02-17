@@ -1,0 +1,17 @@
+apiVersion: fe.milung.eu/v1
+kind: WebComponent
+metadata: 
+  name: profile-ui
+spec:   
+  module-uri: http://profile-ui.wac-hospital/profile-ui.js 
+  preload: false
+  proxy: true
+  hash-suffix: v1alpha1
+  contextElements:
+  - contextNames: [app-bar-tools]
+    element: profile-avatar
+    attributes: 
+    - name: svc
+      value: /avatar/
+    - name: size
+      value: 38px
