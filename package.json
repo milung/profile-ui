@@ -12,7 +12,7 @@
     "dev-proxy": "node ./dev-utils/dev-proxy.js"
   },
   "dependencies": {
-    "@stencil/core": "^2.13.0",
+    "@stencil/core": "^3.0.0",
     "http-proxy": "^1.18.1",
     "ufe-registry": "^1.4.2"
   },
