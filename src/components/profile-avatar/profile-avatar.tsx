@@ -1,5 +1,6 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, State } from '@stencil/core';
 import md5 from "md5";
+import { getUfeRegistryAsync, UfeRegistry} from "ufe-registry"
 
 @Component({
   tag: 'profile-avatar',
@@ -22,14 +23,26 @@ export class ProfileAvatar {
    */
   @Prop({attribute: 'svc'}) avatarsUrl: string;
 
-  render() {
-    const id = this.email?.toLowerCase() || (window as any).ufeRegistry?.userId?.toLowerCase();
+  @State() private ufeRegistry: UfeRegistry;
 
-    if(id)
+  componentWillLoad() {
+     getUfeRegistryAsync().then( ufe => this.ufeRegistry = ufe);
+  }
+
+  render() {
+    let avatar =  undefined
+    const userinfo = this.ufeRegistry?.userinfo;
+    if( this.email) {
+      const hash = md5(this.email);
+      avatar = `${this.avatarsUrl}${hash}`;
+    } else if(userinfo?.email || userinfo?.id )
     {
-      const hash = md5(id);
-      const url = `${this.avatarsUrl}${hash}`;
-      return <img src={url} alt="" loading="lazy" style={ {width: this.size, height:this.size} }/>;
+      const hash = md5(userinfo?.email || userinfo?.id );
+      avatar = `${this.avatarsUrl}${hash}`;
+    }
+    if(avatar)
+    {
+      return <img src={avatar} alt="" loading="lazy" style={ {width: this.size, height:this.size} }/>;
     }
     else
     {

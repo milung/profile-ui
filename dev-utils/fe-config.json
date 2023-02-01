@@ -1,0 +1,62 @@
+{
+    "anonymous":true,
+    "apps": [
+      {
+        "attributes": [],
+        "details":"Datasets that are available to you",
+        "element":"scida-datasets",
+        "labels": {
+      "app.kubernetes.io/component":"scida-webc",
+      "app.kubernetes.io/instance":"developer-host",
+      "app.kubernetes.io/part-of":"data-management-project",
+      "kustomize.toolkit.fluxcd.io/name":"flux-kustomization",
+      "kustomize.toolkit.fluxcd.io/namespace":"scida"
+        },
+        "load_url":"/web-components/scida/scida-webc/scida-webc.v1.jsm",
+        "path":"/datasets",
+        "priority":0,
+        "roles": ["*" ],
+        "styles": [],
+        "title":"Datasets"
+      },
+      {
+        "attributes": [
+      {"name":"identity", "value":"milan.kvetko@gmail.com"},
+      {"name":"user-name", "value":"Milan Kvetko"},
+      {"name":"avatar", "value":true}
+        ],
+        "details":"",
+        "element":"ufe-account-app",
+        "labels": {"app":"micro-fe"},
+        "load_url":"/web-components/default/profile-uic/profile-uic.v1alpha1.jsm",
+        "path":"my-account",
+        "priority":0,
+        "roles": ["*" ],
+        "styles": [],
+        "title":"Môj účet"
+      }
+    ],
+    "contexts": [
+      {
+        "attributes": [],
+        "contextNames": ["shui-shell" ],
+        "element":"shui-shell",
+        "labels": {
+      "app.kubernetes.io/component":"scida-webc",
+      "app.kubernetes.io/instance":"developer-host",
+      "app.kubernetes.io/part-of":"data-management-project",
+      "kustomize.toolkit.fluxcd.io/name":"flux-kustomization",
+      "kustomize.toolkit.fluxcd.io/namespace":"scida"
+        },
+        "load_url":"/web-components/scida/scida-webc/scida-webc.v1.jsm",
+        "roles": ["*" ],
+        "styles": []
+      }
+    ],
+    "preload": [
+      {
+        "load_url":"/web-components/scida/shui-webc/shui-webc.v1.jsm",
+        "styles": ["/web-components/scida/shui-webc/shui-styles.css" ]
+      }
+    ]
+  }

@@ -8,10 +8,13 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "dockerize": "docker build -t milung/ufe-profile-uic ."
+    "dockerize": "docker build -t milung/ufe-profile-uic .",
+    "dev-proxy": "node ./dev-utils/dev-proxy.js"
   },
   "dependencies": {
-    "@stencil/core": "^2.13.0"
+    "@stencil/core": "^2.13.0",
+    "http-proxy": "^1.18.1",
+    "ufe-registry": "^1.4.2"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
